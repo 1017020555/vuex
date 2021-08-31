@@ -4,7 +4,7 @@ import Vuex from 'vuex'
 Vue.use(Vuex)
 
 const state = {
-  count: 0
+  count: 5
 }
 
 const mutations = {
@@ -20,12 +20,20 @@ const actions = {
   actionAdd(context, n) {
     return context.commit('add', n)
   },
-  actionDes({commit},n) {
+  actionDes({commit}, n) {
     commit('des', n)
   }
 }
+
+const getters = {
+  getCount(state) {
+    return (state.count)
+  }
+}
+
 export default new Vuex.Store({
   state,
   mutations,
-  actions
+  actions,
+  getters
 })

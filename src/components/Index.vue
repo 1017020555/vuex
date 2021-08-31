@@ -10,27 +10,30 @@
       <button @click="handleActionsAdd(10)">异步增加</button>
       <button @click="handleActionsReduce(10)">异步减少</button>
     </div>
+    <div>
+      getters--count:{{this.$store.getters.getCount}}
+    </div>
   </div>
 </template>
 
 <script>
-export default {
-  name: 'Index',
-  methods:{
-    myAdd(n){
-      this.$store.commit('add',n)
-    },
-    myDes(n){
-      this.$store.commit('des',n)
-    },
-    handleActionsAdd(n){
-      this.$store.dispatch('actionAdd',n);
-    },
-    handleActionsReduce(n){
-      this.$store.dispatch('actionDes',n);
+  export default {
+    name: 'Index',
+    methods: {
+      myAdd(n) {
+        this.$store.commit('add', n)
+      },
+      myDes(n) {
+        this.$store.commit('des', n)
+      },
+      handleActionsAdd(n) {
+        this.$store.dispatch('actionAdd', n);
+      },
+      handleActionsReduce(n) {
+        this.$store.dispatch('actionDes', n);
+      }
     }
   }
-}
 </script>
 
 <style>
